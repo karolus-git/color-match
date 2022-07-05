@@ -1,0 +1,83 @@
+* { box-sizing: border-box; }
+$('.grid').masonry({
+    itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
+    columnWidth: '.grid-sizer',
+    percentPosition: true
+  });
+  
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.card {
+  border-radius: 15px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-left: 5px;  
+  padding: 0px;
+}
+
+.card-img-top {
+    border-radius: 15px;
+  }
+
+.card-body {
+    padding: 5px;
+  }
+
+  @media (min-width: 34em) {
+    .card-columns {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+  
+  @media (min-width: 48em) {
+    .card-columns {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 5;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .card-columns {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 6;
+    }
+  }
+  
+  @media (min-width: 75em) {
+    .card-columns {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 7;
+    }
+  }
+
+i {
+    position: relative;
+}
+
+i span {
+    visibility: hidden;
+    opacity:  0;
+    position: absolute;
+    bottom: 20px;
+    left: -40px;
+    text-align: center;
+    padding: 2px;
+    width: 80px;
+    height: 25px;
+    border-radius: 15px;
+    color: white
+}
+
+i:hover span {
+    visibility: visible;
+    opacity: 1;
+}

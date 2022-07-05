@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+    mongo:
+      image: mongo:latest
+      environment:
+          MONGO_INITDB_ROOT_USERNAME : root
+          MONGO_INITDB_ROOT_PASSWORD : example
+          MONGO_INITDB_DATABASE : colormatch
+      ports:
+        - '27017:27017'
+      volumes:
+        - ./data:/data/db
+      network_mode: "host"
+
+    color-match:
+      build: .
+      ports:
+        - "5000:5000"
+      network_mode: "host"
+
+volumes:
+  data:
+    driver: local
