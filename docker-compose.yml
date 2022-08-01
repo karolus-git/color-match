@@ -4,11 +4,11 @@ services:
     mongo:
       image: mongo:latest
       environment:
-          MONGO_INITDB_ROOT_USERNAME : root
-          MONGO_INITDB_ROOT_PASSWORD : example
-          MONGO_INITDB_DATABASE : colormatch
+          MONGO_INITDB_ROOT_USERNAME : "${MONGO_USER}"
+          MONGO_INITDB_ROOT_PASSWORD : "${MONGO_PWD}"
+          MONGO_INITDB_DATABASE : "${MONGO_DATABASE}"
       ports:
-        - '27017:27017'
+        - "${MONGO_PORT}:${MONGO_PORT}"
       volumes:
         - ./data:/data/db
       network_mode: "host"
@@ -16,7 +16,7 @@ services:
     color-match:
       build: .
       ports:
-        - "5000:5000"
+        - "${FLASK_PORT}:${FLASK_PORT}"
       network_mode: "host"
 
 volumes:
