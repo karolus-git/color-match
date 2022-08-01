@@ -1,9 +1,0 @@
-MONGO_HOST = "0.0.0.0"
-MONGO_PORT = 27017
-MONGO_DATABASE = "colormatch"
-MONGO_TABLE = "images"
-MONGO_USER = "root"
-MONGO_PWD = "example"
-
-FLASK_HOST = "0.0.0.0"
-FLASK_PORT = 5000
