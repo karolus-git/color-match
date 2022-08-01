@@ -1,12 +1,14 @@
+import os
 from pymongo import MongoClient
 from pymongo import ASCENDING, DESCENDING
+from dotenv import load_dotenv
 
-from settings import MONGO_HOST
-from settings import MONGO_PORT
-from settings import MONGO_DATABASE
-from settings import MONGO_TABLE
-from settings import MONGO_USER
-from settings import MONGO_PWD
+MONGO_HOST = os.getenv('MONGO_HOST', "0.0.0.0")
+MONGO_PORT = os.getenv('MONGO_PORT', 27017)
+MONGO_DATABASE = os.getenv('MONGO_DATABASE', 'colormatch')
+MONGO_TABLE = os.getenv('MONGO_TABLE', 'images')
+MONGO_USER = os.getenv('MONGO_USER', 'root')
+MONGO_PWD = os.getenv('MONGO_PWD', 'example')
 
 def init_db():
     """Initialization of the mongo Databse
