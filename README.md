@@ -12,6 +12,26 @@ This app allows you to drop images in a a flask webapp and to find out its color
 * The grid system is managed by `Masonry`
 * A `mongo` database is used to store the images and their parameters
 
+## Create your .env file
+
+All your settings are stored in that file. Please create a new `.env` file in the `root` folder and edit your variables.
+
+Here is an example of the `.env` file :
+
+```python
+# Flask settings
+FLASK_PORT=5000
+FLASK_HOST = "0.0.0.0"
+
+# Mongo settings
+MONGO_HOST = "0.0.0.0"
+MONGO_PORT = 27017
+MONGO_DATABASE = "colormatch"
+MONGO_TABLE = "images"
+MONGO_USER = "root"
+MONGO_PWD = "example"
+```
+
 ## Installation with Docker
 
 In this case, you only need `Docker`. The installation process will take place during the build of the container. To build it :
@@ -24,7 +44,7 @@ The container is launched with the following command :
 
 ```docker-compose up```
 
-Open your web browser and go to `<your-local-ip>:5000` to see the flask app. Please adjust the parameters in the `docker-compose.yml`, `Dockerfile` and `settings.py` files.
+Open your web browser and go to `<FLASK_HOST>:<FLASK_PORT>` to see the flask app. The port is the port of your choice, written in your `.env` file ;)
 
 ## Credits
 
