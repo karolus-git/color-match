@@ -16,6 +16,6 @@ RUN pip install -r requirements.txt
 
 # Copy of the source files
 COPY src/ .
-
+COPY .env .
 # Run the flask app (not in production !)
 CMD [ "python", "app.py"]
