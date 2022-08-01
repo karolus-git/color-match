@@ -2,6 +2,7 @@ import os
 import gridfs
 import numpy as np
 import base64
+from dotenv import load_dotenv
 from bson import objectid
 from flask import Flask, render_template, request, jsonify
 from flask_dropzone import Dropzone
@@ -9,17 +10,13 @@ from flask_mongoengine import MongoEngine
 
 from flask import redirect, url_for
 
-from settings import MONGO_PWD
-from settings import MONGO_USER
-from settings import MONGO_HOST
-from settings import MONGO_PORT
-from settings import MONGO_DATABASE
-from settings import MONGO_TABLE
-from settings import FLASK_HOST
-from settings import FLASK_PORT
-
 import mongo
 from color_kmeans import ColorKMeans
+
+load_dotenv()
+
+FLASK_PORT = os.getenv('FLASK_PORT', '8050')
+FLASK_HOST = os.getenv('FLASK_HOST', 'localhost')
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
